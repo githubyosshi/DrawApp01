@@ -84,4 +84,21 @@ public class DrawView extends View {
         return true;
     }
 
+    public void backCanvas() {
+        path = null;
+
+        int size = pathList.size(); //ArrayListに格納されているデータ数を取得
+        if (size != 0) {
+            pathList.remove(size - 1);  //ArrayListに最後に格納されたPathを消去
+        }
+
+        invalidate();   //再描画
+    }
+
+    public void clearCanvas() {
+        path = null;
+        pathList.clear();   //ArrayListをクリアする
+        invalidate();   //再描画
+    }
+
 }
